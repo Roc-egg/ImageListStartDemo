@@ -1,4 +1,4 @@
-    package com.example.administrator.imageliststartdemo;
+package com.example.administrator.imageliststartdemo;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -87,6 +87,12 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                     Toast.makeText(MainActivity.this, "网络超时", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(MainActivity.this, "网络错误", Toast.LENGTH_SHORT).show();
+                }
+                if (quickAdapter != null) {
+                    quickAdapter.notifyDataChangedAfterLoadMore(false);
+                    if (notLoadingView == null)
+                        notLoadingView = getLayoutInflater().inflate(R.layout.not_loading, (ViewGroup) recyclerview.getParent(), false);
+                    quickAdapter.addFooterView(notLoadingView);
                 }
                 swiperefreshlayout.setRefreshing(false);
             }
@@ -261,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         if (quickAdapter != null) {
             Logger.e("下拉", "下拉监听");
 //            isLoadingMore = true;
-            quickAdapter.openLoadMore(10, true);
+            quickAdapter.openLoadMore(50, true);
             quickAdapter.removeAllFooterView();
         }
     }
