@@ -4,5 +4,4 @@
 
 ###效果图
 
-![image](https://github.com/1033752447@qq.com/ImageListStartDemo/Image/Logo/GIF.gif)
-
+![image](/Image/GIF.gif)
