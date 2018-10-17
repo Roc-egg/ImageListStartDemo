@@ -1,7 +1,7 @@
-###ImageListStartDemo
+##ImageListStartDemo
 
 图片点击动画放大至全屏查看Demo
 
-###效果图
+##效果图
 
-![image](/Image/GIF.gif)
+![.](/Image/GIF.gif)
